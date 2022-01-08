@@ -38,14 +38,14 @@ public class GameService {
 			}
 		}
 
-		// 노트북을 고른 사람은 내 방으로 바로 가야 함
-//		if (player.getSkill() instanceof notebook) {
-//			// 공부 하러 가는 것 구현
-//			System.out.println("\n조카랑 노는 것보다 공부가 더 중요하지... 오늘 퀴즈 풀어야 한다구...");
-////			studyWithTeacher();
-//			// 마지막 엔딩을 구현할 거라면 여기에
-//			return;
-//		}
+		 //노트북을 고른 사람은 내 방으로 바로 가야 함
+		if (player.getSkill() instanceof notebook) {
+			// 공부 하러 가는 것 구현
+			System.out.println("\n조카랑 노는 것보다 공부가 더 중요하지... 오늘 퀴즈 풀어야 한다구...");
+			studingWithteacher();
+			// 마지막 엔딩을 구현할 거라면 여기에
+			return;
+		}
 
 		// 반복문 나가는 라벨 추가 @임태미
 		exit: 
@@ -86,6 +86,7 @@ public class GameService {
 	void studingWithteacher() {
 		Room1 room = new Room1(player);
 		int num = room.roomStage5(player);
+		
 		System.out.println("\n내 점수는...! " + num + "점이다...");
 		switch (num) {
 		case 0:

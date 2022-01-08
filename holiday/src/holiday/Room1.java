@@ -14,6 +14,39 @@ public class Room1 {
 		this.stage = 1;
 	}
 
+	final String [] QUIZ2 = new String[]{
+			"소나무가 삐지면?",
+			"세상에서 가장 지루한 중학교는?",
+			"반성문을 영어로 하면?",
+			"아재가 좋아하는 악기는?",
+			"토끼용 빗은?",
+			"논리적인 사람이 총을 쏘면?",
+			"세상에서 가장 쉬운 숫자는?",
+			"바다가 뜨거우면?",
+			"딸기가 도망가면?",
+			"딸이 기분이 좋으면?"
+			
+		};
+	final String [] QUIZ2_ANSWER = new String[] {
+			"칫솔",
+			"로딩중",
+			"글로벌",
+			"아쟁",
+			"레빗",
+			"타당타당",
+			"190000",
+			"열받아",
+			"딸기쨈",
+			"딸기모찌"
+				
+		};
+	final String [] room2ment = new String[] {
+			"중딩 : 어이어이~ 틀리면 내 안의 흑염룡이 깨어난다고~!",
+			"중딩 : 후후... 역시 나와 놀 자격은 없는건가..?",
+			"중딩 : 훗.. 역시 넌 나와 놀 자격이 없어! 내안의 흑염룡이 깨기전에 도망가라고!"
+		};
+		
+		
 	public boolean roomStage1() {
 
 
@@ -86,6 +119,7 @@ public class Room1 {
 					scores--;
 				} else { 
 					System.out.println("잘못골랐스테이션");
+					
 				}
 				
 				num++ ;
@@ -128,10 +162,86 @@ public class Room1 {
 
 
 	public boolean roomStage2() {
+stage = 2;
+		
+		System.out.println("---------------중딩방----------------");
 		System.out.println("중딩이랑 놀아주기");
-//		player.playerUsingSkill(stage);
-		player.playerLifeMinus();
-
+		System.out.println("중딩 : 어이어이, 감히 나랑 놀아준다고 자격이 있는지 볼까?");
+		System.out.println("중딩 : 문제를 내도록 하지");
+		System.out.println();
+		Scanner sc = new Scanner(System.in);
+		String answer = "";
+		int room2ment_index = 0;
+		
+		int count = 0;
+		
+		int [] ran_num = new int[5];
+		
+		// 랜덤값 5개를 중복없이 배열에 넣어줌
+		for(int i = 0 ; i < 5 ; i++) {
+			ran_num[i] = (int)(Math.random()*10);
+			for(int j = 0 ; j < i ; j++) {
+				if(ran_num[i] == ran_num[j]) {
+					i--;
+					break;
+				}
+			}
+		}
+		
+		// 문제 5개 중딩이 내는 반복문
+		while(count < 5) {
+			
+			System.out.println("문제 : " + QUIZ2[ran_num[count]]);
+			answer = sc.next();
+			System.out.println();
+			
+			// 중딩이 재시한 문제를 맞췄을 경우
+			if(answer.equals(QUIZ2_ANSWER[ran_num[count]])) {
+				
+				// 문제가 마지막일 경우에 따른 화면 출력을 하기위해 if문 작성
+				// 문제가 마지막이 아닐 경우
+				if(count <4)
+					System.out.println("중딩 :정답이군.. 하지만 다음 문제는 어떨까?!");
+				// 문제가 마지막일 경우
+				else {
+					System.out.println("player life : " + player.getLife());
+					System.out.println();
+				
+					break;
+				}
+			// 문제를 안풀고 스킬 사용시 해당 스킬 발동
+			}else if(answer.equals("스킬")) {
+				// 책 스킬 발동
+				if(player.getSkill() instanceof Book) {
+//					player.playerUsingSkill(stage, ran_num[count]);
+					count++;
+					continue;
+				}
+				// 게임기 스킬 발동
+				else {
+//					player.playerUsingSkill(stage, ran_num[count]);
+				}
+			}
+			// 문제를 틀렸을 경우
+			else {
+				
+				System.out.println(room2ment[room2ment_index++]);
+				// 플레이어 생명 -1
+				player.playerLifeMinus();
+				// 플레이어의 생명이 0이 되었을 경우 게임오버(return으로 false)
+				if(player.getLife()==0)
+					return false;
+			}
+			
+			count++;
+			// 현재 남은 생명 화면에 출력
+			System.out.println("player life : " + player.getLife());
+			System.out.println();
+		}
+		
+		// while문을 나왔다는 것은 문제를 다 풀었다는 뜻이므로 
+		// return값을 true로 리턴
+		System.out.println("중딩 : 후.. 이정도면 만족해주지(찡긋)");
 		return true;
 	}
 
