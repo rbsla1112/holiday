@@ -2,5 +2,5 @@ package holiday;
 
 public interface Skill {
 	
-	void usingSkill(int stage, Player player);
+	void usingSkill(int stage, int num);
 }

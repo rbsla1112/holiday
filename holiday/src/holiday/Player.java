@@ -83,9 +83,9 @@ public class Player {
 		this.life = life;
 	}
 	
-//	public void playerUsingSkill(int stage) {
-//		skill.usingSkill(stage);
-//	}
+	public void playerUsingSkill(int stage, int num) {
+		skill.usingSkill(stage, num);
+	}
 	
 	public void playerLifeMinus() {
         this.life--;
