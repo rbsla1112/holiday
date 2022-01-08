@@ -15,12 +15,12 @@ public class GameService {
 		int skillChoice = 0;
 
 		//캐릭터 프로필생성
-		System.out.print("플레이어 이름 : ");
+		System.out.print("내 이름은 : ");
 		name = sc.next();
 		
 		// skill 선택에 따른 Player 객체 초기화
 		skillchoice: while (true) {
-			System.out.print("\n(1)책   (2)게임기   (3)노트북\n하나를 선택해주세요 > ");
+			System.out.print("\n(1)책   (2)게임기   (3)노트북\n하나를 선택하자. > ");
 			skillChoice = sc.nextInt();
 
 			if (skillChoice == 1) {
@@ -33,7 +33,7 @@ public class GameService {
 				player = new Player(name, new notebook());
 				break skillchoice;
 			} else {
-				System.out.println("잘못된 번호를 입력하셨습니다. 다시 선택해 주세요.");
+				System.out.println("아무것도 안 가져갈 순 없어.");
 				continue skillchoice;
 			}
 		}
@@ -50,8 +50,8 @@ public class GameService {
 		// 반복문 나가는 라벨 추가 @임태미
 		exit: 
 			while (true) {
-			System.out.println("1 : 나갈래, 2 : 조카랑 놀래, 3 : 강사님 만날래");
-			System.out.print("어디가?");
+			System.out.println("\n(1) 밖으로 (2) 조카들이 있는 방 (3) 조용한 내 방");
+			System.out.print("어디로 갈까? ");
 			int menu = sc.nextInt();
 
 			switch (menu) {
@@ -133,12 +133,11 @@ public class GameService {
 		room.roomStage3();
 		// 체력소진시 종료 / 체력이 남은경우 true;
 		if (player.getLife() == 0) {
+			player.gameOver();
 			return false;
 		} else {
-			player.gameOver();
 			return true;
 		}
-
 	}
 
 	boolean goOut() {

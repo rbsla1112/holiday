@@ -67,8 +67,10 @@ public class Room1 {
 		while (num < 3) {
 				
 				/* 첫번째 문제 */
+			
+			System.out.println("[초딩과 잼민어로 말싸움 Start!!!!!!!]");
 				System.out.println("초딩이랑 놀아주기 선택, 주어진 기회는 단 세번뿐!");
-				System.out.println("잘못입력시 점수는 깎이지 않지만 게임 횟수는 차감 당한다!");
+//				System.out.println("잘못입력시 점수는 깎이지 않지만 게임 횟수는 차감 당한다!");
 				System.out.println("======================");
 				System.out.println("오늘은 조카가 놀러온 날. 그런데 집안 어딘가로 사라진 조카가 조용하다.");
 				System.out.println("잠시뒤 방하나를 돼지우리로 만들어버린 초딩 조카를 발견했다!");
@@ -146,7 +148,6 @@ public class Room1 {
 				} else { 
 					System.out.println("잘못골람보르기니");
 				}
-				
 				num++;
 				break;
 				}
@@ -154,7 +155,6 @@ public class Room1 {
 				/* 스코어가 0이상일시 true 반환, 그렇지않으면 false 반환 */
 				if (scores > 0) {
 					return true;
-					
 				} 
 				player.playerLifeMinus();
 				return false;
@@ -162,9 +162,9 @@ public class Room1 {
 
 
 	public boolean roomStage2() {
-stage = 2;
+		stage = 2;
 		
-		System.out.println("---------------중딩방----------------");
+		System.out.println("[중딩과 넌센스 게임 Start!!!!!!!!!]");
 		System.out.println("중딩이랑 놀아주기");
 		System.out.println("중딩 : 어이어이, 감히 나랑 놀아준다고 자격이 있는지 볼까?");
 		System.out.println("중딩 : 문제를 내도록 하지");
@@ -190,7 +190,6 @@ stage = 2;
 		
 		// 문제 5개 중딩이 내는 반복문
 		while(count < 5) {
-			
 			System.out.println("문제 : " + QUIZ2[ran_num[count]]);
 			answer = sc.next();
 			System.out.println();
@@ -229,13 +228,14 @@ stage = 2;
 				// 플레이어 생명 -1
 				player.playerLifeMinus();
 				// 플레이어의 생명이 0이 되었을 경우 게임오버(return으로 false)
+				
 				if(player.getLife()==0)
 					return false;
 			}
 			
 			count++;
 			// 현재 남은 생명 화면에 출력
-			System.out.println("player life : " + player.getLife());
+			System.out.println("\n현재 내 체력은 " + player.getLife());
 			System.out.println();
 		}
 		
@@ -246,9 +246,14 @@ stage = 2;
 	}
 
 	public boolean roomStage3() {
-		System.out.println("고딩이랑 놀아주기");
+		stage = 3;
+		
+		System.out.println("[고딩과 숫자 야구 게임 Start!!!!!!!]");
 
-		System.out.println("--------------- 게임 설명 ---------------");
+		System.out.println("\n고딩 조카는 독특한 게임을 하나 제시한다. 바로 숫자 야구게임");
+		System.out.println("고딩이가 마음속으로 생각한 랜덤한 숫자 3자리를 맞춰라!");
+		System.out.println("같은자리에 같은 숫자일 경우 1S (스트라이크) , 숫자만 같을경우 1B(볼) 이다!");
+		System.out.println("기회는 단 5번! 맞추지 못할 경우 체력이 깍인다.");
 		Scanner sc = new Scanner(System.in);
 
 		int[] random = new int[3];
@@ -262,7 +267,8 @@ stage = 2;
 				}
 			}
 		}
-		System.out.print("실행확인용 random 값 : ");
+		
+		System.out.print("\n(실행확인용 random 값 : )");
 		for (int i : random) {
 			System.out.print(i);
 		}
@@ -272,14 +278,16 @@ stage = 2;
 		int s = 0; // 스트라이크
 		int b = 0; // 볼
 
+		System.out.println("\n고딩 : 나 숫자 생각했어. 맞춰봐!");
 		while (true) {
-			System.out.println("자 " + tryNum + "번 남았어!");
-			System.out.print("3자리의 숫자를 입력하세요 : ");
+			
+			System.out.println("고딩 : 자 " + tryNum + "번 남았어!");
+			System.out.print("3자리의 숫자를 외쳐보자 !! : ");
 			String str = sc.nextLine();
 
 			/* 4자리 정수인지 확인 */
 			if (str.length() != 3) {
-				System.out.println("3자리 숫자라고~~");
+				System.out.println("고딩 : 3자리 숫자라고~~");
 				continue;
 			}
 
@@ -301,7 +309,8 @@ stage = 2;
 				}
 				/* 정답인 경우 */
 				if (s == 3) {
-					System.out.println("정답이야 !!");
+					System.out.println("고딩 : 정답이야 !!");
+					System.out.println("고딩 조카가 대단하다는 듯이 우러러본다. 난 사실 독심술을...");
 					return true;
 				}
 			}
@@ -316,17 +325,28 @@ stage = 2;
 
 			/* 정답이 아닌 경우 */
 			if (s != 3) {
-				System.out.println("아쉽다! " + s + "S, " + b + "B !");
+				System.out.println("고딩 : 아쉽다! " + s + "S, " + b + "B !");
 
 				tryNum--; // 시도횟수 -1회
 				s = 0; // 스트라이크 개수 초기화
 				b = 0; // 볼 개수 초기화
 
+				/* 게임 중간에 스킬을 쓸 수 있다. */
+				if(tryNum==3) {
+				if(player.getSkill() instanceof gameMachine) {
+					System.out.println("\n잠깐 힌트 힌트!!! 게임기 빌려줄게!!!");
+					System.out.println("\n고딩 : 아 정말 ~~ 알았어 하나만 알려줄게. 대신 게임기 내일까지 써도 되지?");
+					System.out.println("고딩 : 첫번째 자리는 "+random[0]+" 이야" );
+					continue;
+					}
+				}
+				
 				/* 시도 횟수가 0번이 되면 게임 종료 */
 				if (tryNum == 0) {
-					System.out.println("5번 안에 못 맞췄어. 아웃이야!");
+					System.out.println("고딩 : 5번 안에 못 맞췄어. 아웃이야!");
 					player.playerLifeMinus();
-
+					
+					System.out.println("고딩 조카는 게임이 끝나자 흥미를 잃었다. 다시 밖으로 나가자.");
 					return false;
 				}
 			}
@@ -338,7 +358,7 @@ stage = 2;
 	public int roomStage5(Player player) {
 		stage = 5;
 		int checkNum = 3;
-		System.out.println("\n----- 내 방 -----");
+		System.out.println("\n[내 방에서 java 공부하기.....Start]");
 		System.out.println("\n에휴... 오늘 퀴즈 있다고 했어... 퀴즈 풀어야지 ㅠㅠ");
 		System.out.println("(기회는 " + checkNum + "번!)");
 		System.out.println("\n우별림 강사님: 여러분 다 자리에 앉으셨죠? 자리에 계시면 확인 버튼 한 번 눌러주세요~");
