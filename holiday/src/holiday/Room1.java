@@ -162,7 +162,7 @@ public class Room1 {
 
 
 	public boolean roomStage2() {
-stage = 2;
+		stage = 2;
 		
 		System.out.println("---------------중딩방----------------");
 		System.out.println("중딩이랑 놀아주기");
@@ -213,13 +213,19 @@ stage = 2;
 			}else if(answer.equals("스킬")) {
 				// 책 스킬 발동
 				if(player.getSkill() instanceof Book) {
-//					player.playerUsingSkill(stage, ran_num[count]);
+					player.playerUsingSkill(stage, ran_num[count]);
 					count++;
 					continue;
 				}
 				// 게임기 스킬 발동
 				else {
-//					player.playerUsingSkill(stage, ran_num[count]);
+					player.playerUsingSkill(stage, ran_num[count]);
+					answer = sc.next();
+					if(answer.equals(QUIZ2_ANSWER[ran_num[count]])) {
+						System.out.println("중딩 :정답이군.. 하지만 다음 문제는 어떨까?!");
+						count++;
+						continue;
+					}
 				}
 			}
 			// 문제를 틀렸을 경우
