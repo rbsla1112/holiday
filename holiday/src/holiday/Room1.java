@@ -43,11 +43,15 @@ public class Room1 {
 	final String [] room2ment = new String[] {
 			"중딩 : 어이어이~ 틀리면 내 안의 흑염룡이 깨어난다고~!",
 			"중딩 : 후후... 역시 나와 놀 자격은 없는건가..?",
-			"중딩 : 훗.. 역시 넌 나와 놀 자격이 없어! 내안의 흑염룡이 깨기전에 도망가라고!"
+			"중딩 : 훗.. 역시 넌 나와 놀 자격이 없어! 내안의 흑염룡이 깨기전에 도망가라고!",
+			"중딩 : 내..내안의 흑염룡이 깨어난다아아!!",
+			"흑염룡 : 나는 이제 세계 최강 흑염룡..! 넌 이제 내 상대가 될 수 없다.."
+			
 		};
 		
 		
 	public boolean roomStage1() {
+		System.out.println("*******************************************");
 
 
 //			[답근거] :  더 비싼 것이 이긴다!
@@ -71,6 +75,12 @@ public class Room1 {
 			System.out.println("[초딩과 잼민어로 말싸움 Start!!!!!!!]");
 				System.out.println("초딩이랑 놀아주기 선택, 주어진 기회는 단 세번뿐!");
 //				System.out.println("잘못입력시 점수는 깎이지 않지만 게임 횟수는 차감 당한다!");
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				System.out.println("======================");
 				System.out.println("오늘은 조카가 놀러온 날. 그런데 집안 어딘가로 사라진 조카가 조용하다.");
 				System.out.println("잠시뒤 방하나를 돼지우리로 만들어버린 초딩 조카를 발견했다!");
@@ -78,6 +88,12 @@ public class Room1 {
 				System.out.println("조카가 대꾸했다. \"응~ 어쩔티비~\" ");
 				System.out.println("다음 중 조카를 이길 수 있는 답변이 있다.");
 				System.out.println();
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				System.out.println("=====보기=====");
 				System.out.println("1. 저쩔티비");
 				System.out.println("2. 저쩔다이슨V11청소기");
@@ -98,7 +114,12 @@ public class Room1 {
 				
 				num ++;
 				System.out.println();
-				
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				/* 두번째 게임 */
 				System.out.println("조카가 다시 의기양양하게 소리쳤다! \"응~ 저쩔플레이스테이션~\" ");
 				
@@ -127,6 +148,12 @@ public class Room1 {
 				num++ ;
 				System.out.println();
 				
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				/* 세번째 게임 */
 				
 				System.out.println("조카가 다시 의기양양하게 소리쳤다! \"응~ 저쩔람보르기니~\" ");
@@ -162,10 +189,54 @@ public class Room1 {
 
 
 	public boolean roomStage2() {
+		System.out.println("*******************************************");
 		stage = 2;
 		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		System.out.println("[중딩과 넌센스 게임 Start!!!!!!!!!]");
-		System.out.println("중딩이랑 놀아주기");
+		System.out.println();
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println("게임 규칙");
+		System.out.println("중딩이 문제를 내면 해당 문제를 입력하라!");
+		System.out.println("총 5문제가 주어지며 1문제 틀릴때마다 체력이 깍인다!");
+		System.out.println("가지고 있는 스킬로 해당 문제를 해결할 수 있다!");
+		System.out.println();
+		System.out.println();
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println("스킬 발동 조건 - '스킬'입력");
+		System.out.println("1. 책 - 중딩이 좋아하는 만화책을 주면 해당 문제 패스!");
+		System.out.println("2. 게임기 - 게임기를 주면 힌트를 줄수도..?!");
+		System.out.println("스킬은 2번만 사용가능하다!");
+		System.out.println();
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println("야생의 흑염룡 중딩을 만나다!");
 		System.out.println("중딩 : 어이어이, 감히 나랑 놀아준다고 자격이 있는지 볼까?");
 		System.out.println("중딩 : 문제를 내도록 하지");
 		System.out.println();
@@ -174,6 +245,7 @@ public class Room1 {
 		int room2ment_index = 0;
 		
 		int count = 0;
+		int skill_count = 2;
 		
 		int [] ran_num = new int[5];
 		
@@ -188,11 +260,15 @@ public class Room1 {
 			}
 		}
 		
+		System.out.println("===================================");
 		// 문제 5개 중딩이 내는 반복문
 		while(count < 5) {
+		
 			System.out.println("문제 : " + QUIZ2[ran_num[count]]);
+			System.out.print(player.getName() + " : ");
 			answer = sc.next();
 			System.out.println();
+			
 			
 			// 중딩이 재시한 문제를 맞췄을 경우
 			if(answer.equals(QUIZ2_ANSWER[ran_num[count]])) {
@@ -210,15 +286,58 @@ public class Room1 {
 				}
 			// 문제를 안풀고 스킬 사용시 해당 스킬 발동
 			}else if(answer.equals("스킬")) {
+				if(skill_count == 0) {
+					System.out.println("더이상 스킬을 사용 할 수 없어...");
+					continue;
+				}
+
 				// 책 스킬 발동
 				if(player.getSkill() instanceof Book) {
-//					player.playerUsingSkill(stage, ran_num[count]);
+					player.playerUsingSkill(stage, ran_num[count]);
 					count++;
+					skill_count--;
+					System.out.println("===================================");
 					continue;
+					
+					
 				}
 				// 게임기 스킬 발동
 				else {
-//					player.playerUsingSkill(stage, ran_num[count]);
+					if(skill_count == 0)
+						continue;
+					player.playerUsingSkill(stage, ran_num[count]);
+					
+					System.out.print(player.getName() + " : ");
+					answer = sc.next();
+					skill_count--;
+					if(answer.equals(QUIZ2_ANSWER[ran_num[count]])) {
+						
+						// 문제가 마지막일 경우에 따른 화면 출력을 하기위해 if문 작성
+						// 문제가 마지막이 아닐 경우
+						if(count <4)
+							System.out.println("중딩 :정답이군.. 하지만 다음 문제는 어떨까?!");
+						// 문제가 마지막일 경우
+						else {
+							System.out.println("player life : " + player.getLife());
+							System.out.println();
+						
+							break;
+						}
+					
+					}else {
+						
+						System.out.println(room2ment[room2ment_index++]);
+						// 플레이어 생명 -1
+						player.playerLifeMinus();
+						if(player.getLife() > 0)
+							System.out.println("중딩 : 정답은 [" + QUIZ2_ANSWER[ran_num[count]] + "] ㅋㅋㅋㅋㅋㅋㅋ 그것도 못마췈ㅋㅋㅋ");
+						// 플레이어의 생명이 0이 되었을 경우 게임오버(return으로 false)
+						System.out.println();
+						if(player.getLife()==0)
+							return false;
+					}
+					
+					
 				}
 			}
 			// 문제를 틀렸을 경우
@@ -227,8 +346,10 @@ public class Room1 {
 				System.out.println(room2ment[room2ment_index++]);
 				// 플레이어 생명 -1
 				player.playerLifeMinus();
+				if(player.getLife() > 0)
+					System.out.println("중딩 : 정답은 [" + QUIZ2_ANSWER[ran_num[count]] + "] ㅋㅋㅋㅋㅋㅋㅋ 그것도 못마췈ㅋㅋㅋ");
 				// 플레이어의 생명이 0이 되었을 경우 게임오버(return으로 false)
-				
+				System.out.println();
 				if(player.getLife()==0)
 					return false;
 			}
@@ -237,6 +358,13 @@ public class Room1 {
 			// 현재 남은 생명 화면에 출력
 			System.out.println("\n현재 내 체력은 " + player.getLife());
 			System.out.println();
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println("===================================");
 		}
 		
 		// while문을 나왔다는 것은 문제를 다 풀었다는 뜻이므로 
@@ -246,12 +374,19 @@ public class Room1 {
 	}
 
 	public boolean roomStage3() {
+		System.out.println("*******************************************");
 		stage = 3;
 		
 		System.out.println("[고딩과 숫자 야구 게임 Start!!!!!!!]");
 
 		System.out.println("\n고딩 조카는 독특한 게임을 하나 제시한다. 바로 숫자 야구게임");
 		System.out.println("고딩이가 마음속으로 생각한 랜덤한 숫자 3자리를 맞춰라!");
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println("같은자리에 같은 숫자일 경우 1S (스트라이크) , 숫자만 같을경우 1B(볼) 이다!");
 		System.out.println("기회는 단 5번! 맞추지 못할 경우 체력이 깍인다.");
 		Scanner sc = new Scanner(System.in);
@@ -356,11 +491,20 @@ public class Room1 {
 
 	// int로 수정하여 결과에 따라 선생님 멘트가 달라지도록 했음
 	public int roomStage5(Player player) {
+		System.out.println("*******************************************");
 		stage = 5;
 		int checkNum = 3;
 		System.out.println("\n[내 방에서 java 공부하기.....Start]");
 		System.out.println("\n에휴... 오늘 퀴즈 있다고 했어... 퀴즈 풀어야지 ㅠㅠ");
 		System.out.println("(기회는 " + checkNum + "번!)");
+		
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		System.out.println("\n우별림 강사님: 여러분 다 자리에 앉으셨죠? 자리에 계시면 확인 버튼 한 번 눌러주세요~");
 		System.out.print("확인을 입력하세요 : ");
 		String check = sc.next();
@@ -372,6 +516,12 @@ public class Room1 {
 			player.setLife(checkNum - 1);
 		}
 
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// 문제 제출
 		// 1번
 		System.out.println("\n우별림 강사님: 첫 번째 문제 드릴게요~");
@@ -391,7 +541,14 @@ public class Room1 {
 			System.out.println("오답입니다. 점수를 잃었습니다.");
 			--checkNum;
 		}
-
+		
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		// 2번
 		System.out.println("\n우별림 강사님: 두 번째 문제 드릴게요~");
 		System.out.println("\n2. 객체 배열에 대한 설명으로 옳은 것은?");
@@ -410,6 +567,13 @@ public class Room1 {
 			--checkNum;
 		}
 
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		// 3번
 		System.out.println("\n우별림 강사님: 세 번째 문제 드릴게요~");
 		System.out.println("\n3. 다음은 무엇에 관한 설명인가? (주관식, 한글로 적으세요)");

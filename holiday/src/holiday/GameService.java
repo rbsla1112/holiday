@@ -12,7 +12,7 @@ public class GameService {
 		
 		Scanner sc = new Scanner(System.in);
 		String name ="";
-		int skillChoice = 0;
+		char skillChoice;
 
 		//캐릭터 프로필생성
 		System.out.print("내 이름은 : ");
@@ -20,20 +20,21 @@ public class GameService {
 		
 		// skill 선택에 따른 Player 객체 초기화
 		skillchoice: while (true) {
-			System.out.print("\n(1)책   (2)게임기   (3)노트북\n하나를 선택하자. > ");
-			skillChoice = sc.nextInt();
-
-			if (skillChoice == 1) {
+			System.out.print("\n(1)책   (2)게임기   (3)노트북\n하나를 선택하자.(숫자 입력) > ");
+			
+			skillChoice = sc.next().charAt(0);
+			
+			if (skillChoice == 49) {
 				player = new Player(name, new Book());
 				break skillchoice;
-			} else if (skillChoice == 2) {
+			} else if ((int)skillChoice == 50) {
 				player = new Player(name, new gameMachine());
 				break skillchoice;
-			} else if (skillChoice == 3) {
+			} else if ((int)skillChoice == 51) {
 				player = new Player(name, new notebook());
 				break skillchoice;
 			} else {
-				System.out.println("아무것도 안 가져갈 순 없어.");
+				System.out.println("숫자를 입력해야지!");
 				continue skillchoice;
 			}
 		}
