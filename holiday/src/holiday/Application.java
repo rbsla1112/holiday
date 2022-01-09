@@ -5,10 +5,29 @@ import java.util.Scanner;
 public class Application {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+		/**
+		 * [Java로 만든 Console 게임제작]
+		 * 프로젝트명 : holiday
+		 * 게임 설명 : 설날을 맞아 본가에 내려가게 된 주인공이 
+		 * 			 초딩/중딩/고딩/강사님/호랑이 캐릭터를 만나 주어진 미니게임을 클리어하는 게임
+		 * 			 5개의 미니 게임과 4개의 엔딩으로 구현하였다.
+		 * 
+		 * 클래스와 객체/ 상속과 다형성 / 추상클래스와 인터페이스의 개념을 이용하여 제작함.
+		 * 이 게임은 .jar파일로 export한 뒤 holiday.exe 파일로 이클립스 외에서 실행 가능하도록 제작하였다.
+		 * 
+		 * 2022.1.7~2022.1.9 (3일간 제작)
+		 * @author 팀4조 : 임수연 / 임태미 / 노현주 / 박서영 / 조윤호
+		 * 
+		 */
+		
+		System.out.println("\n[holiday]\t\tㅡ팀4조 제작 \n");
+
+		
+		System.out.println("----------------------------------");
+		
 		GameService gameService = new GameService();
-
+		
 		gameService.gameStart();
 
 	}

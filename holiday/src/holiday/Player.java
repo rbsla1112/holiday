@@ -93,5 +93,6 @@ public class Player {
 	
 	public void gameOver() {
         System.out.println("[모든 체력을 잃었습니다. GameOver]");
+        GameService.pause(); 
     }
 }

@@ -1,9 +1,11 @@
 package holiday;
 
+import java.io.IOException; // 입력 제어
 import java.util.Scanner;
 
 public class GameService {
 
+	
 	Player player;
 	int life = 5;
 
@@ -13,10 +15,15 @@ public class GameService {
 		Scanner sc = new Scanner(System.in);
 		String name ="";
 		char skillChoice;
-
+		
+		
 		//캐릭터 프로필생성
 		System.out.print("내 이름은 : ");
 		name = sc.next();
+		
+		System.out.println("\n설날에 본가에 내려가게 된 " + name + "...");
+		System.out.println("엄마의 미션으로 급식이 조카들을 돌보라는 미션을 받게 되는데...");
+		System.out.println(name + " : 본가에 가져갈 물건부터 챙기자.");
 		
 		// skill 선택에 따른 Player 객체 초기화
 		skillchoice: while (true) {
@@ -44,6 +51,7 @@ public class GameService {
 			// 공부 하러 가는 것 구현
 			System.out.println("\n애들이랑 노는 것보다 공부가 더 중요하지... 오늘 퀴즈 풀어야 한다구...");
 			studingWithteacher();
+			pause();
 			return;
 		}
 
@@ -62,7 +70,9 @@ public class GameService {
 				if (ending1 == true) {
 					break;
 				} else {
+					pause();
 					break exit;
+					
 				}
 			case 2:
 				boolean ending2 = playingWithBrother();
@@ -70,8 +80,10 @@ public class GameService {
 					// 사촌동생들과 잘 놀아준 엔딩
 					System.out.println("\n" + player.getName() + ": 난 이제 지쳤어요... 공부는 못 하겠어...");
 					System.out.println("조카들: 추석에 또 올게~!");
+					pause();
 					return;
 				} else {
+					pause();
 					break exit;
 				}
 			case 3:
@@ -89,6 +101,7 @@ public class GameService {
 	/* 강사님 시험 엔딩 */
 	void studingWithteacher() {
 		Room1 room = new Room1(player);
+		
 		int num = room.roomStage5(player);
 		
 		System.out.println("\n내 점수는...! " + num + "점이다...");
@@ -140,6 +153,7 @@ public class GameService {
 			player.gameOver();
 			return false;
 		} else {
+			pause();
 			return true;
 		}
 	}
@@ -221,10 +235,15 @@ public class GameService {
 		} else {
 			System.out.println("호랑이가 한층 화가났다..... 으아아아아아!!!");
 			System.out.println("[당신은 호랑이에게 죽고 말았습니다]");
-
+			
 			return false;
 
 		}
 	}
-
+	//콘솔 강제 종료 방지 메소드. 키보드로 입력 받도록 기다림. @박서영
+	public static void pause() {
+	     try {
+	       System.in.read();
+	     } catch (IOException e) { }
+	   }
 }

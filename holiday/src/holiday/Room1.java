@@ -24,6 +24,7 @@ public class Room1 {
 			"세상에서 가장 쉬운 숫자는?",
 			"바다가 뜨거우면?",
 			"딸기가 도망가면?",
+			"딸이 기분이 좋으면?"
 			
 		};
 	final String [] QUIZ2_ANSWER = new String[] {
@@ -36,6 +37,7 @@ public class Room1 {
 			"190000",
 			"열받아",
 			"딸기쨈",
+			"딸기모찌"
 				
 		};
 	final String [] room2ment = new String[] {
@@ -376,7 +378,6 @@ public class Room1 {
 			try {
 				Thread.sleep(2000);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			System.out.println("===================================");
@@ -416,8 +417,7 @@ public class Room1 {
 				}
 			}
 		}
-		
-		System.out.print("\n(실행확인용 random 값 : )");
+
 		for (int i : random) {
 			System.out.print(i);
 		}
@@ -431,7 +431,7 @@ public class Room1 {
 		while (true) {
 			
 			System.out.println("고딩 : 자 " + tryNum + "번 남았어!");
-			System.out.print("3자리의 숫자를 외쳐보자 !! : ");
+			System.out.print("\n3자리의 숫자를 외쳐보자 !! : ");
 			String str = sc.nextLine();
 
 			/* 4자리 정수인지 확인 */
@@ -458,8 +458,9 @@ public class Room1 {
 				}
 				/* 정답인 경우 */
 				if (s == 3) {
-					System.out.println("고딩 : 정답이야!! 헐 어떻게 바로 알지?");
+					System.out.println("\n고딩 : 정답이야!! 헐 어떻게 바로 알지?");
 					System.out.println("고딩 조카가 대단하다는 듯이 우러러본다. \'난 사실 독심술을...\'");
+					GameService.pause();
 					return true;
 				}
 			}
@@ -474,7 +475,7 @@ public class Room1 {
 
 			/* 정답이 아닌 경우 */
 			if (s != 3) {
-				System.out.println("고딩 : 아쉽다! " + s + "S, " + b + "B !");
+				System.out.println("\n고딩 : 아쉽다! " + s + "S, " + b + "B !");
 
 				tryNum--; // 시도횟수 -1회
 				s = 0; // 스트라이크 개수 초기화
@@ -492,10 +493,11 @@ public class Room1 {
 				
 				/* 시도 횟수가 0번이 되면 게임 종료 */
 				if (tryNum == 0) {
-					System.out.println("고딩 : 5번 안에 못 맞췄어. 아웃이야!");
+					System.out.println("\n고딩 : 5번 안에 못 맞췄어. 아웃이야!");
 					player.playerLifeMinus();
 					
-					System.out.println("고딩 조카는 게임이 끝나자 흥미를 잃었다. 다시 밖으로 나가자.");
+					System.out.println("고딩 조카는 그래도 재밌어한 것 같다.");
+					GameService.pause();
 					return false;
 				}
 			}
