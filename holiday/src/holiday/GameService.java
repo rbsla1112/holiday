@@ -18,7 +18,8 @@ public class GameService {
 		
 		
 		//캐릭터 프로필생성
-		System.out.print("내 이름은 : ");
+		System.out.println("----------------------------------");
+		System.out.print("\n내 이름은 : ");
 		name = sc.next();
 		
 		System.out.println("\n설날에 본가에 내려가게 된 " + name + "...");
