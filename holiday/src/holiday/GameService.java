@@ -57,6 +57,7 @@ public class GameService {
 			switch (menu) {
 			case 1:
 				// 결과를 논리값으로 리턴받아 참이면 게임진행 거짓이면 게임오버
+
 				boolean ending1 = goOut();
 				if (ending1 == true) {
 					break;
@@ -152,7 +153,9 @@ public class GameService {
 		 */
 		System.out.println("\n▶밖으로 나왔다. \n시골은 정말 어둡다. 그런데 마당에 있는 건...?! \n" + "!!!!! 야생의 호랑이가 나타났다 !!!!! ");
 
-		System.out.println("\n[Tiger Game]");
+		System.out.println("*******************************************");
+		
+		System.out.println("[Tiger Game Start!!!!!!!]");
 		System.out.println("\n--------- 호랑이 굴에 들어가도 호랑이 말만 잘하면 살아 남는다 !!! ------");
 		System.out.println();
 		Scanner sc = new Scanner(System.in);
@@ -161,7 +164,7 @@ public class GameService {
 		System.out.println("호랑이 : 어흥(" + Q1 + ")!!!");
 		System.out.print("호랑이의 울음소리를 똑같이 따라해보자! : ");
 		String str = sc.nextLine();
-		System.out.println("▶" + str + "!!!!!!!!!");
+		System.out.println("\n"+ player.getName()+" : " + str + "!!!!!!!!!");
 
 		if (str.equals(Q1)) {
 			System.out.println("호랑이가 고개를 갸웃거린다.");
@@ -176,6 +179,18 @@ public class GameService {
 
 		System.out.print("내 수중에 물건이라도 써볼까!? (y/n): ");
 		char ch = sc.next().charAt(0);
+		if (ch == 'y') {
+			if (player.getSkill() instanceof notebook) {
+				System.out.println("▶노트북으로 호랑이를 이길 순 없다.");
+			} else if (player.getSkill() instanceof Book) {
+				System.out.println("▶책으로 호랑이를 이길 순 없다.");
+			} else if (player.getSkill() instanceof gameMachine) {
+				System.out.println("▶닌텐도로 호랑이를 이길 순 없다.");
+			}
+		} else {
+			System.out.println("▶쓸만한 물건은 없다.");
+		}
+		System.out.println();
 
 		// 이 부분 스킬 메소드 호출하기.
 //		player.playerUsingSkill(3);
@@ -188,7 +203,7 @@ public class GameService {
 		System.out.print("이번엔 호랑이의 울음소리를 거꾸로 따라해보자! : ");
 		sc.nextLine();
 		String str2 = sc.nextLine();
-		System.out.println("▶" + str2 + "!!!!!!!!!");
+		System.out.println("\n"+player.getName()+" : " + str2 + "!!!!!!!!!");
 
 		StringBuffer sb = new StringBuffer(Q2);
 		String reverse = sb.reverse().toString();
@@ -196,7 +211,7 @@ public class GameService {
 		/* 엔딩 분기점 */
 		// 정답을 맞춘경우 생존
 		if (str2.equals(reverse)) {
-			System.out.println("호랑이가 그대로 떠나갔다... 나 살아남은건가?");
+			System.out.println("\n호랑이가 그대로 떠나갔다... 나 살아남은건가?");
 			System.out.println();
 
 			System.out.println("집안으로 서둘러 들어왔다.. 역시 집밖은 위험해");

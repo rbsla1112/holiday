@@ -24,7 +24,6 @@ public class Room1 {
 			"세상에서 가장 쉬운 숫자는?",
 			"바다가 뜨거우면?",
 			"딸기가 도망가면?",
-			"딸이 기분이 좋으면?"
 			
 		};
 	final String [] QUIZ2_ANSWER = new String[] {
@@ -37,7 +36,6 @@ public class Room1 {
 			"190000",
 			"열받아",
 			"딸기쨈",
-			"딸기모찌"
 				
 		};
 	final String [] room2ment = new String[] {
@@ -75,26 +73,24 @@ public class Room1 {
 			System.out.println("[초딩과 잼민어로 말싸움 Start!!!!!!!]");
 				System.out.println("초딩이랑 놀아주기 선택, 주어진 기회는 단 세번뿐!");
 //				System.out.println("잘못입력시 점수는 깎이지 않지만 게임 횟수는 차감 당한다!");
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				System.out.println("======================");
+				System.out.println("\n==========================================");
 				System.out.println("오늘은 조카가 놀러온 날. 그런데 집안 어딘가로 사라진 조카가 조용하다.");
 				System.out.println("잠시뒤 방하나를 돼지우리로 만들어버린 초딩 조카를 발견했다!");
+				try {
+					Thread.sleep(1500);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 				System.out.println("내가 소리친다. \"방이 이게 뭐야!\" ");
-				System.out.println("조카가 대꾸했다. \"응~ 어쩔티비~\" ");
+				System.out.println("조카가 대꾸했다. \n초딩 : 응~ 어쩔티비~ ");
 				System.out.println("다음 중 조카를 이길 수 있는 답변이 있다.");
 				System.out.println();
 				try {
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				System.out.println("=====보기=====");
+				System.out.println("=================== 보기 ===================");
 				System.out.println("1. 저쩔티비");
 				System.out.println("2. 저쩔다이슨V11청소기");
 				System.out.println("3. 저쩔플레이스테이션");
@@ -109,15 +105,14 @@ public class Room1 {
 					player.playerLifeMinus(); 
 					scores--;
 				} else { 
-					System.out.println("잘못골랐티비");
+					System.out.println("초딩 : 잘못골랐티비");
 				}
 				
 				num ++;
 				System.out.println();
 				try {
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				/* 두번째 게임 */
@@ -125,7 +120,7 @@ public class Room1 {
 				
 				System.out.println("다음 중 조카를 이길 수 있는 답변이 있다.");
 				System.out.println();
-				System.out.println("=====보기=====");
+				System.out.println("=================== 보기 ===================");
 				System.out.println("1. 저쩔전기톱");
 				System.out.println("2. 저쩔다이소통돌이세탁기");
 				System.out.println("3. 저쩔샤오미체중기");
@@ -137,11 +132,11 @@ public class Room1 {
 				if (game2 == 4) {
 					System.out.println("이겼다!");
 				} else if (game2 <= 4 && game2 > 0) {
-					System.out.println("말싸움에서 졌다!");
+					System.out.println("말싸움에서 졌다! \n자존심에 손상이 가 체력이 1 깍였다.");
 					player.playerLifeMinus();
 					scores--;
 				} else { 
-					System.out.println("잘못골랐스테이션");
+					System.out.println("초딩 : 잘못골랐스테이션");
 					
 				}
 				
@@ -149,16 +144,15 @@ public class Room1 {
 				System.out.println();
 				
 				try {
-					Thread.sleep(3000);
+					Thread.sleep(2000);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				/* 세번째 게임 */
 				
 				System.out.println("조카가 다시 의기양양하게 소리쳤다! \"응~ 저쩔람보르기니~\" ");
 				System.out.println("다음 중 조카를 이길 수 있는 답변이 있다.");
-				System.out.println("=====보기=====");
+				System.out.println("=================== 보기 ===================");
 				System.out.println("1. 저쩔페라리라페라리");
 				System.out.println("2. 저쩔다이슨V11청소기");
 				System.out.println("3. 저쩔삼성NeoQLEDTV");
@@ -169,11 +163,11 @@ public class Room1 {
 				if (game3 == 1) {
 					System.out.println("이겼다!");
 				} else if (game3 > 1 && game3 <= 4) {
-					System.out.println("말싸움에서 졌다!");
+					System.out.println("말싸움에서 졌다! \n자존심에 손상이 가 체력이 1 깍였다.");
 					scores--;
 					player.playerLifeMinus();
 				} else { 
-					System.out.println("잘못골람보르기니");
+					System.out.println("초딩 : 잘못골람보르기니");
 				}
 				num++;
 				break;
@@ -181,8 +175,33 @@ public class Room1 {
 				
 				/* 스코어가 0이상일시 true 반환, 그렇지않으면 false 반환 */
 				if (scores > 0) {
+					
+					System.out.println("나는 숨을 한번 가다듬었다.");
+					try {
+						Thread.sleep(3000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					
+									
+				System.out.println("\n"+player.getName() + " : 지리고요 오지고요 고요고요 고요한 밤이고요 "
+						+ "\n실화냐? 다큐냐? 맨큐냐? 오져따리오져따 쿵쿵따리 쿵쿵따 "
+						+ "\n산기슭이 인정하는 바이고요 슭곰발이 인정하는 바입니다~"
+						+ "\n이거레알 반박불가 빼박캔트 버벌진트 버캔스탁인 부분 지리고요~ "
+						+ "\n오지고 지리고 렛잇고 아리랑 고개를 넘어 새가 날아들어 좌로 인정 우로 인정 "
+						+ "\n뒷구르기 인정 앞으로 인정 뒤로 인정 앞구르기 인정 옆구르기 인정 풍차돌리기 인정 "
+						+ "\n레알마드리드 인정 공중회전세바퀴후 인정따리인정따~쿵취따취 "
+						+ "\n샘오취리 갈취따취 에바쎄바쌈바디바 참치넙치꽁치삼치갈치뭉치면살고 "
+						+ "\n흩어지면 씹인정하는 각이옵니다"
+						+ "\n동의?어 보감~~");
+					
+					System.out.println(player.getName() +" : 잼민아... 이모 잘 하지?");
+					
+					System.out.println("\n초딩 : 인정하는 바 입니다.");
+					
 					return true;
 				} 
+				System.out.println("초딩 : 이겼고 지렸고 레릿고");
 				player.playerLifeMinus();
 				return false;
 		}
@@ -193,9 +212,8 @@ public class Room1 {
 		stage = 2;
 		
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(6000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -203,9 +221,8 @@ public class Room1 {
 		System.out.println();
 		
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -219,7 +236,6 @@ public class Room1 {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -232,7 +248,6 @@ public class Room1 {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -382,12 +397,11 @@ public class Room1 {
 		System.out.println("\n고딩 조카는 독특한 게임을 하나 제시한다. 바로 숫자 야구게임");
 		System.out.println("고딩이가 마음속으로 생각한 랜덤한 숫자 3자리를 맞춰라!");
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("같은자리에 같은 숫자일 경우 1S (스트라이크) , 숫자만 같을경우 1B(볼) 이다!");
+		System.out.println("같은 자리에 같은 숫자일 경우 1S (스트라이크) , 숫자만 같을경우 1B(볼) 이다!");
 		System.out.println("기회는 단 5번! 맞추지 못할 경우 체력이 깍인다.");
 		Scanner sc = new Scanner(System.in);
 
@@ -433,7 +447,7 @@ public class Room1 {
 			for (int i = 0; i < 3; i++) {
 				char ch = str.charAt(i); // 문자열을 문자로
 				answer[i] = ch - 48;
-				// 문자를 배열에 값저장 유니코드 int로 값 변환하려면 -48 하기!
+				// 문자를 배열에 값저장 유니코드 정수로 값 변환하려면 -48 하기!
 			}
 
 			/* 스트라이크 확인 */
@@ -444,8 +458,8 @@ public class Room1 {
 				}
 				/* 정답인 경우 */
 				if (s == 3) {
-					System.out.println("고딩 : 정답이야 !!");
-					System.out.println("고딩 조카가 대단하다는 듯이 우러러본다. 난 사실 독심술을...");
+					System.out.println("고딩 : 정답이야!! 헐 어떻게 바로 알지?");
+					System.out.println("고딩 조카가 대단하다는 듯이 우러러본다. \'난 사실 독심술을...\'");
 					return true;
 				}
 			}
@@ -499,9 +513,8 @@ public class Room1 {
 		System.out.println("(점수는 " + checkNum + "점 만점!)");
 		
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -517,9 +530,8 @@ public class Room1 {
 		}
 
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		// 문제 제출
@@ -543,9 +555,8 @@ public class Room1 {
 		}
 		
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -568,9 +579,8 @@ public class Room1 {
 		}
 
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
