@@ -276,7 +276,7 @@ public class Room1 {
 				// 문제가 마지막일 경우에 따른 화면 출력을 하기위해 if문 작성
 				// 문제가 마지막이 아닐 경우
 				if(count <4)
-					System.out.println("중딩 :정답이군.. 하지만 다음 문제는 어떨까?!");
+					System.out.println("중딩 : 정답이군.. 하지만 다음 문제는 어떨까?!");
 				// 문제가 마지막일 경우
 				else {
 					System.out.println("player life : " + player.getLife());
@@ -315,7 +315,7 @@ public class Room1 {
 						// 문제가 마지막일 경우에 따른 화면 출력을 하기위해 if문 작성
 						// 문제가 마지막이 아닐 경우
 						if(count <4)
-							System.out.println("중딩 :정답이군.. 하지만 다음 문제는 어떨까?!");
+							System.out.println("중딩 : 정답이군.. 하지만 다음 문제는 어떨까?!");
 						// 문제가 마지막일 경우
 						else {
 							System.out.println("player life : " + player.getLife());
@@ -496,7 +496,7 @@ public class Room1 {
 		int checkNum = 3;
 		System.out.println("\n[내 방에서 java 공부하기.....Start]");
 		System.out.println("\n에휴... 오늘 퀴즈 있다고 했어... 퀴즈 풀어야지 ㅠㅠ");
-		System.out.println("(기회는 " + checkNum + "번!)");
+		System.out.println("(점수는 " + checkNum + "점 만점!)");
 		
 		try {
 			Thread.sleep(5000);
@@ -511,7 +511,7 @@ public class Room1 {
 		if (check.equals("확인")) {
 			System.out.println("\n네, 다들 들어오셨네요~ 퀴즈 시작할게요.");
 		} else {
-			System.out.println("\n" + player.getName() + "씨 아직 안 돌아오셨어요? 여러분... 수업 시간은 지키셔야죠...");
+			System.out.println("\n우별림 강사님: " + player.getName() + "씨 아직 안 돌아오셨어요? 여러분... 수업 시간은 지키셔야죠...");
 			System.out.println(player.getName() + ": 정말 죄송합니다... ㅠㅠ\n점수를 잃었습니다...");
 			player.setLife(checkNum - 1);
 		}

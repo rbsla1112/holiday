@@ -42,16 +42,15 @@ public class GameService {
 		 //노트북을 고른 사람은 내 방으로 바로 가야 함
 		if (player.getSkill() instanceof notebook) {
 			// 공부 하러 가는 것 구현
-			System.out.println("\n조카랑 노는 것보다 공부가 더 중요하지... 오늘 퀴즈 풀어야 한다구...");
+			System.out.println("\n애들이랑 노는 것보다 공부가 더 중요하지... 오늘 퀴즈 풀어야 한다구...");
 			studingWithteacher();
-			// 마지막 엔딩을 구현할 거라면 여기에
 			return;
 		}
 
 		// 반복문 나가는 라벨 추가 @임태미
 		exit: 
 			while (true) {
-			System.out.println("\n(1) 밖으로 (2) 조카들이 있는 방 (3) 조용한 내 방");
+			System.out.println("\n(1) 밖으로 (2) 조카들과 놀아주기 (3) 조용한 내 방");
 			System.out.print("어디로 갈까? ");
 			int menu = sc.nextInt();
 
@@ -67,7 +66,10 @@ public class GameService {
 			case 2:
 				boolean ending2 = playingWithBrother();
 				if (ending2 == true) {
-					break;
+					// 사촌동생들과 잘 놀아준 엔딩
+					System.out.println("\n" + player.getName() + ": 난 이제 지쳤어요... 공부는 못 하겠어...");
+					System.out.println("조카들: 추석에 또 올게~!");
+					return;
 				} else {
 					break exit;
 				}
@@ -113,7 +115,7 @@ public class GameService {
 		/*
 		 * 초딩 중딩 고딩 순으로 게임 메소드 호출 생명력을 확인하여 0이 되면 게임종료 체력이 남아있으면 다음 스테이지 도전
 		 */
-		System.out.println("현재 내 체력은 " + player.getLife());
+		System.out.println("\n현재 내 체력은 " + player.getLife());
 		room.roomStage1();
 		// 체력소진시 게임오버
 		if (player.getLife() == 0) {
@@ -121,7 +123,7 @@ public class GameService {
 			return false;
 		}
 
-		System.out.println("현재 내 체력은 " + player.getLife());
+		System.out.println("\n현재 내 체력은 " + player.getLife());
 
 		room.roomStage2();
 		// 체력소진시 게임오버
@@ -129,7 +131,7 @@ public class GameService {
 			player.gameOver();
 			return false;
 		}
-		System.out.println("현재 내 체력은 " + player.getLife());
+		System.out.println("\n현재 내 체력은 " + player.getLife());
 
 		room.roomStage3();
 		// 체력소진시 종료 / 체력이 남은경우 true;
@@ -148,10 +150,10 @@ public class GameService {
 		 * 
 		 * @author 임태미
 		 */
-		System.out.println("▶밖으로 나왔다. \n시골은 정말 어둡다. 그런데 마당에 있는 건...?! \n" + "!!!!! 야생의 호랑이가 나타났다 !!!!! ");
+		System.out.println("\n▶밖으로 나왔다. \n시골은 정말 어둡다. 그런데 마당에 있는 건...?! \n" + "!!!!! 야생의 호랑이가 나타났다 !!!!! ");
 
-		System.out.println("[Tiger Game]");
-		System.out.println("--------- 호랑이 굴에 들어가도 호랑이 말만 잘하면 살아 남는다 !!! ------");
+		System.out.println("\n[Tiger Game]");
+		System.out.println("\n--------- 호랑이 굴에 들어가도 호랑이 말만 잘하면 살아 남는다 !!! ------");
 		System.out.println();
 		Scanner sc = new Scanner(System.in);
 
@@ -197,7 +199,7 @@ public class GameService {
 			System.out.println("호랑이가 그대로 떠나갔다... 나 살아남은건가?");
 			System.out.println();
 
-			System.out.println("집안으로 서둘러 들어왔다..역시 집밖은 위험해");
+			System.out.println("집안으로 서둘러 들어왔다.. 역시 집밖은 위험해");
 			return true;
 
 			// 정답을 못 맞춘 경우 게임오버
